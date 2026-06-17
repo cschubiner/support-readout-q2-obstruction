@@ -1,0 +1,822 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1.10in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\newcommand{\A}{\mathcal A}
+\newcommand{\B}{\mathcal B}
+\newcommand{\C}{\mathbb C}
+\newcommand{\D}{\mathcal D}
+\newcommand{\F}{\mathcal F}
+\newcommand{\M}{\mathcal M}
+\newcommand{\N}{\mathcal N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathcal Z}
+\setlength{\emergencystretch}{3em}
+\hypersetup{
+  pdftitle={Support, Readout, and the Binary-Rank Obstruction},
+  pdfsubject={Operator algebras, AQFT, operational reconstruction, and finite centers},
+  pdfkeywords={AQFT, von Neumann algebras, finite centers, support projections, DHR sectors, locally covariant QFT, operator-algebra quantum error correction, black-hole entropy}
+}
+
+\title{Support, Readout, and the Binary-Rank Obstruction}
+\author{}
+\date{Submission-freeze package of June 12, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Operational reconstructions in algebraic quantum field theory and quantum
+information reconstruct the algebraic object that is supplied: a represented
+von Neumann algebra, a locally covariant functor, a sector category, a
+correctable logical algebra, or a Type II algebra with a specified trace and
+entropy normalization.  This note isolates a finite central obstruction to
+turning such a reconstruction into a derivation of a binary microscopic
+alphabet.  If the displayed data factor through a normal quotient
+\(\pi_q:\widehat\A_q\to\A\), where
+\(\widehat\A_q=\A\oplus(\N\bar\otimes\ell^\infty(\{1,\ldots,q\}))\), then the
+same data are compatible with \(q=2\) and with \(q>2\) finite central
+completions.  They therefore do not determine full ambient support,
+faithfulness of the represented physical algebra, the physical/null/gauge/
+inadmissible status of \(\ker\pi_q\), the finite central rank \(q\), or the
+predicate \(q=2\).
+
+The theorem also records the exact positive form of the missing hypotheses.
+First, every non-null finite central direction must be accounted for by
+available probes/readouts or by a null, gauge, or inadmissibility quotient:
+for \(V_q=\ell^\infty_q/\C 1\), this is the rank equation
+\(\operatorname{rank}R_q=\dim(V_q/N_q)\).  Second, even after support/readout
+accountability, binary rank does not follow from entropy alone; every
+\(q\ge2\) satisfies \(S_q=\log q=\Delta A_q/(4G\hbar)\) after choosing
+\(\Delta A_q=4G\hbar\log q\).  A binary conclusion requires a further
+finite-alphabet law, such as the least nontrivial closed quotient rule, or
+direct \(q=2\) spectroscopy whose measurement channel is itself derived.  A
+small Lean 4 file verifies the finite same-data/no-reconstruction kernel.
+\end{abstract}
+
+\paragraph{Keywords.}
+Algebraic quantum field theory; von Neumann algebras; finite centers; support
+projections; locally covariant quantum field theory; DHR sectors;
+operator-algebra quantum error correction; black-hole spectroscopy.
+
+\paragraph{Status.}
+This is a submission-freeze package extracted from existing notes.  It does not
+modify the frozen finite-center paper.  Its claim is intentionally negative and
+conditional: quotient-visible data do not force a binary primitive.
+
+\section{Question}
+
+The intended target is not a new reconstruction theorem for AQFT, modular
+theory, entanglement-wedge reconstruction, or gravitational crossed products.
+Those positive theorems are accepted as inputs.  The question is a narrower
+converse.  Suppose an operational experiment supplies normal state and effect
+values, channels, modular data, locally covariant time-slice and relative
+Cauchy evolution data, DHR/DR sector data, JLMS/OAQEC recovery data, continuum
+limits, and entropy assignments, but all of the displayed data factor through a
+represented quotient \(\A\).  Can those data alone prove that there is no
+additional finite central support in a larger admitted algebra
+\(\widehat\A_q\)?  Can they decide whether such a finite central kernel is
+physical, null, gauge, or inadmissible?  Can they select the special finite
+rank \(q=2\)?
+
+The answer in this note is negative under explicit assumptions.  The same
+answer is also the useful positive guide: a proof of binary rank must stop
+using quotient-visible data and must exhibit the extra non-quotient input.  In
+finite language, that input has two independent pieces.  The first is
+support/readout accountability: all finite central directions must either be
+separated by physical probes/readouts or be removed by a null/gauge/
+inadmissibility rule.  The second is a primitive finite-alphabet rule: after a
+finite center is accountable, entropy and ordinary yes/no tests still do not
+tell us which quotient is counted as the elementary finite alphabet.
+
+\section{Novelty Boundary}
+
+The table gives the novelty check.  The note should be demoted if a
+published theorem already states the joint criterion in the right form.
+
+\begin{longtable}{p{0.28\linewidth}p{0.34\linewidth}p{0.30\linewidth}}
+\toprule
+Claim in this note & Nearest standard result & Honest boundary \\
+\midrule
+Operational data reconstruct only targets constant on data fibers. &
+This is elementary descent for functions, and in operator algebras it appears
+whenever a normal quotient or represented null space is fixed. &
+No novelty is claimed for the fiber lemma.  The contribution is the finite
+central application to support, readout, and binary rank. \\
+\addlinespace
+Quotient-visible locally covariant and relative-Cauchy data for a supplied
+functor do not decide whether an invisible finite center has been admitted. &
+Brunetti--Fredenhagen--Verch define locally covariant QFT and relative Cauchy
+evolution; Fewster--Verch define dynamical locality and SPASs
+\cite{BFV,FewsterVerch}. &
+No new locally covariant theorem is claimed.  Full-theory dynamical locality,
+source faithfulness, or indecomposability may be exactly the extra positive
+assumption; quotient-visible data alone are weaker. \\
+\addlinespace
+DHR/DR sector data do not recreate central-character fibers omitted from the
+supplied category. &
+Doplicher--Haag--Roberts and Doplicher--Roberts reconstruct field algebras and
+gauge groups from a supplied sector structure \cite{DHR1,DHR2,DR}. &
+No new DR reconstruction theorem is claimed.  The statement is a warning about
+which category was supplied. \\
+\addlinespace
+JLMS/OAQEC recovers a supplied logical algebra, not a larger finite central
+completion. &
+JLMS, Harlow, Dong--Harlow--Wall, and infinite-dimensional OAQEC work identify
+relative entropy/recovery conditions for specified algebras
+\cite{JLMS,HarlowRT,DHW,KangKolchmeyer}. &
+The note does not dispute recovery.  It says maximality or full logical
+algebra data is an additional input. \\
+\addlinespace
+Crossed-product/generalized-entropy data do not select \(q=2\) without finite
+rank calibration. &
+Witten, Chandrasekaran--Longo--Penington--Witten, and
+Chandrasekaran--Penington--Witten construct Type II algebras and entropy
+notions in gravitational settings \cite{WittenCrossed,CLPW,CPW}. &
+The note does not rederive generalized entropy.  It isolates finite residuals
+when a central register is outside the supplied algebra or trace calibration. \\
+\addlinespace
+Black-hole entropy does not by itself force binary rank. &
+Bekenstein--Mukhanov black-hole spectroscopy relates area spacing, degeneracy,
+and line emission \cite{BekensteinMukhanov}. &
+A resolved \(\log 2\) line would validate binary empirically.  The note says
+entropy alone is not that measurement. \\
+\bottomrule
+\end{longtable}
+
+\section{Data and Targets}
+
+Let \(\A\) be the represented algebra reconstructed from the displayed
+operational experiment.  Let \(\N\) be a nonzero von Neumann algebra and, for
+each \(q\ge2\), set
+\[
+  \widehat\A_q
+  =
+  \A\oplus\bigl(\N\bar\otimes \ell^\infty(\{1,\ldots,q\})\bigr).
+\]
+Let \(\pi_q:\widehat\A_q\to\A\) be the normal quotient onto the first summand.
+The finite central projection
+\[
+  p_q=(0,1_{\N\bar\otimes\ell^\infty_q})
+\]
+is nonzero in \(\widehat\A_q\) and is killed by \(\pi_q\).
+
+The displayed data are allowed to be rich, but in the negative theorem they
+are assumed to factor through \(\pi_q\).  Examples include:
+\begin{itemize}
+  \item pulled-back normal state/effect values \(a\mapsto\varphi(\pi_q(a))\);
+  \item represented modular data for a weight after quotienting to \(\A\);
+  \item Osterwalder--Schrader or GNS data after the represented null quotient;
+  \item a locally covariant functor, time-slice map, or relative Cauchy
+  evolution computed only for the quotient algebra;
+  \item a supplied DHR/DR sector category for \(\A\);
+  \item JLMS/OAQEC relative-entropy or recovery data for a specified logical
+  algebra contained in \(\A\);
+  \item a continuum limit and a fixed entropy value computed only in \(\A\).
+\end{itemize}
+
+The targets are ambient.  They include full support in \(\widehat\A_q\),
+faithfulness of the represented physical algebra on \(\widehat\A_q\), the
+interpretation of \(\ker\pi_q\) as physical/null/gauge/inadmissible/absent,
+the finite rank \(q\), and the predicate \(q=2\).  If the target is only the
+represented quotient \(\A\), the negative theorem is irrelevant: standard
+positive reconstruction theorems apply to the object actually supplied.
+
+\section{Main Classification}
+
+\begin{theorem}[support/readout and binary-rank obstruction]
+Let the comparison class contain the algebras
+\[
+  \widehat\A_q=\A\oplus
+  \bigl(\N\bar\otimes\ell^\infty(\{1,\ldots,q\})\bigr)
+\]
+for at least two values \(q\ge2\), including \(q=2\) and some \(q>2\).  Suppose
+that every displayed datum \(D_q\) is a labelled function of the normal
+quotient \(\pi_q:\widehat\A_q\to\A\), and suppose no additional datum separates
+the second summand or removes it from the comparison class by a quotient,
+gauge, inadmissibility, factor, split, or physical-exclusion rule.
+
+Then all displayed data are identical as \(q\) varies.  Nevertheless
+\(p_q=(0,1)\) is a nonzero central projection killed by all quotient-visible
+readouts.  Consequently the data do not reconstruct:
+\begin{enumerate}
+  \item full ambient support in \(\widehat\A_q\);
+  \item faithfulness on \(\widehat\A_q\);
+  \item whether \(\ker\pi_q\) is physical, null, gauge, inadmissible, or absent;
+  \item the finite central rank \(q\);
+  \item the binary predicate \(q=2\).
+\end{enumerate}
+
+Moreover, if the finite central directions that survive quotienting are
+encoded by \(V_q=\ell^\infty_q/\C1\), if \(N_q\subset V_q\) is the declared
+null/gauge/inadmissible subspace, and if \(R_q:V_q\to\R^m\) is the available
+readout map, then full finite-central accountability is exactly the rank
+condition
+\[
+  \operatorname{rank} R_q = \dim(V_q/N_q),
+\]
+with \(R_q\) understood on \(V_q/N_q\).  If this accountability condition is
+not met, there are non-null finite central directions that are not read out.  If
+it is met, binary rank still does not follow from the Bekenstein--Hawking
+coefficient alone: for every \(q\ge2\),
+\[
+  S_q=\log q,\qquad
+  \Delta A_q=4G\hbar\log q
+\]
+satisfy \(S_q=\Delta A_q/(4G\hbar)\).  A binary conclusion therefore requires
+an additional finite-alphabet rule selecting the least nontrivial closed
+quotient, or direct \(q=2\) data with its measurement channel.
+\end{theorem}
+
+\begin{proof}
+For the first part, every displayed datum has the form
+\(\widetilde D\circ\pi_q\).  Hence it is independent of the second summand and
+is the same for all \(q\).  The projection \(p_q\) is central and nonzero in
+\(\widehat\A_q\), but \(\pi_q(p_q)=0\), so all pulled-back normal readouts and
+all quotient-formed modular, sector, recovery, continuum, and entropy data
+vanish on the corner \(p_q\widehat\A_qp_q\).  Replacing \(q=2\) by \(q=3\) keeps
+all displayed data fixed while changing the finite central rank and the truth
+value of \(q=2\).  Any rule depending only on the displayed data would assign
+the same answer to both candidates, so no such rule can reconstruct the listed
+ambient targets.
+
+The accountability statement is finite linear algebra.  After quotienting by
+the declared null/gauge/inadmissible directions \(N_q\), the remaining finite
+central directions are \(V_q/N_q\).  A family of real-valued central readouts
+separates all of them exactly when its induced map on \(V_q/N_q\) is injective.
+For finite-dimensional spaces, injectivity is equivalent to
+\(\operatorname{rank} R_q=\dim(V_q/N_q)\).  If the rank is smaller, a nonzero
+class is both non-null and invisible to the supplied readouts.
+
+Finally, the entropy statement is again finite.  For an accountable
+\(q\)-state event alphabet, the Shannon/von Neumann entropy of the uniform
+finite cell is \(\log q\).  Choosing the corresponding area increment
+\(\Delta A_q=4G\hbar\log q\) gives the exact one-quarter coefficient for every
+integer \(q\ge2\).  Thus the coefficient evaluates the alphabet once the
+alphabet has been specified; it does not choose the alphabet.  Choosing the
+least nontrivial quotient is a separate finite-alphabet rule, and a resolved
+\(\log2\) spectral line is a direct datum rather than a consequence of the
+quotient-visible data.
+\end{proof}
+
+\section{The Countermodel Family in Coordinates}
+
+It is useful to spell out the same-data family without any gravitational
+language.  Fix a represented algebra \(\A\), a nonzero algebra \(\N\), and a
+finite rank \(q\ge2\).  The enlarged candidate is
+\[
+  \widehat\A_q=\A\oplus(\N\bar\otimes\ell^\infty_q).
+\]
+The quotient-visible experiment uses the map
+\[
+  \pi_q(a,n_1,\ldots,n_q)=a .
+\]
+Every normal state \(\omega\) on \(\A\) gives a pulled-back normal state
+\(\omega\circ\pi_q\) on \(\widehat\A_q\).  Every effect, channel matrix
+element, relative entropy, modular expectation value, or continuum observable
+formed from the quotient is similarly pulled back.  Thus the entire displayed
+experiment is independent of \(q\).
+
+The ambient algebra, however, is not independent of \(q\).  Its center contains
+the projection \(p_q=(0,1,\ldots,1)\), and the finite central quotient of the
+hidden summand has \(q\) characters.  A rank-sensitive target can distinguish
+\(\widehat\A_2\) from \(\widehat\A_3\), while the displayed data cannot.  This
+is the whole no-go in its shortest form: same data, different target.  The
+argument is insensitive to whether \(\N\) is type I, type II, or type III; if
+the finite central summand is admitted and not separated or quotiented, it
+survives the displayed quotient data.
+
+There are two common ways to misread this example.  The first is to say that a
+universal representation of the full algebra would see the finite center.  That
+is true, but it changes the data.  The universal representation of
+\(\widehat\A_q\) contains states supported on the hidden summand, while the
+quotient-visible experiment does not.  The second is to say that the hidden
+summand is obviously unphysical.  That may also be true in a better theory, but
+then the better theory must state the physicality, quotient, gauge, or
+inadmissibility rule that removes it.  The point of the countermodel is that
+the quotient-visible data themselves do not provide that rule.
+
+\subsection{Positive-support readouts versus atom separation}
+
+For a specified finite center \(C_q=\ell^\infty_q\), a family of positive
+normal readouts can be faithful on the positive cone without separating the
+atoms.  In \(C_2\), the sum readout
+\[
+  \tau(z_1,z_2)=z_1+z_2
+\]
+is strictly positive on every nonzero positive vector, so it detects whether a
+positive element is zero.  But it does not distinguish \((1,0)\) from
+\((0,1)\), and its kernel is not an algebra ideal.  Thus positive support
+faithfulness and full central tomography are different exits.  The first rules
+out invisible positive support relative to the specified center; the second
+reconstructs atoms, central weights, and finite rank.  A binary-rank theorem
+needs the second kind of information, or a physical law replacing it.
+
+\subsection{Static finite labels and response data}
+
+The same finite central extension can be made static with respect to the
+quotient response.  If a locally covariant or Hamiltonian response is computed
+only on \(\A\), take the hidden central register to have identity evolution and
+zero source response in the displayed experiment.  Then every quotient response
+function is unchanged.  This does not prove that response-null finite labels
+are physically admissible.  It says only that response-null labels are not
+excluded by response data unless the theory also asserts response-faithful
+probe admissibility, source-generated physicality, or a null/inadmissibility
+quotient for response-null finite directions.
+
+\subsection{All binary questions do not make a binary alphabet}
+
+For \(q>2\), the finite algebra \(C_q\) has many two-outcome coarse-grained
+tests:
+\[
+  (\chi_A,1-\chi_A),\qquad
+  \varnothing\ne A\ne\{1,\ldots,q\}.
+\]
+Owning these yes/no questions is not the same as declaring one of them to be
+the elementary formation alphabet.  A three-outcome register has three binary
+questions and still has three atoms.  A four-outcome register may be a pair of
+bits, a single four-letter alphabet, or a coarse quotient of a larger alphabet,
+depending on which tensor/refinement structure the physical theory supplies.
+Thus binary propositions are cheap; binary primitive rank is not.
+
+\section{What Would Falsify the No-Go}
+
+The theorem is not meant to be immune to stronger hypotheses.  It is designed
+to make those hypotheses explicit.  Any of the following would block the
+countermodel family.
+
+\paragraph{Full central tomography.}
+If the experiment includes normal preparations and effects separating all
+minimal central projections of \(\widehat\A_q\), then \(q\) is measured.  The
+same-data fiber collapses.  This is not a contradiction of the theorem because
+the data no longer factor through \(\pi_q\).
+
+\paragraph{A quotient or physicality theorem.}
+If a theorem says that every finite central direction outside the represented
+GNS/operational support is null, gauge, or inadmissible, then the hidden
+summand is removed before ambient support is demanded.  Again, the theorem is
+not contradicted; one of its excluded positive exits has been supplied.
+
+\paragraph{Maximality of the logical algebra.}
+If OAQEC/JLMS data are not merely data of a correctable subalgebra but data of
+the full maximal logical algebra, then a hidden finite center in the logical
+commutant is no longer invisible.  The missing input is the maximality
+statement, not recovery of the supplied subalgebra.
+
+\paragraph{A source-faithfulness principle.}
+If all admitted finite labels must have nonzero source, stress, modular, or
+relative-Cauchy response unless they are null, then response-null \(q\)-labels
+are inadmissible.  This is a strong physical admissibility condition.  It is
+plausible in some settings and false in others with transparent topological or
+superselection sectors; the note treats it as an assumption that must be
+proved for the class under discussion.
+
+\paragraph{A binary finite-alphabet law.}
+If every accountable finite event alphabet is required to be the least
+nontrivial closed quotient of its event algebra, then the selected size is
+\(2\).  The Lean core checks this finite implication.  What remains is the
+physical derivation of the least-quotient rule.
+
+\paragraph{Direct spectroscopy.}
+If black-hole spectroscopy or another finite-rank probe resolves
+\(\Xi=\log q\), and the measurement channel is part of the microscopic theory,
+then the observed \(q\) is selected.  A result \(\Xi=\log2\) validates binary;
+\(\Xi=\log3\) or \(\Xi=\log4\) falsifies it.  This route is empirical rather
+than a derivation from quotient-visible data.
+
+\section{Referee Checklist}
+
+A referee can check the note without adopting any private formalism by asking
+five questions.
+
+\begin{enumerate}
+  \item Is the comparison class explicitly closed under the finite central
+  direct sums used in the countermodel?  If not, where is the physical
+  exclusion theorem?
+  \item Do the displayed data genuinely factor through the quotient
+  \(\pi_q\)?  If some datum does not factor through \(\pi_q\), does it separate
+  the hidden central rank?
+  \item Is the target ambient rather than quotient-internal?  If the target is
+  only the represented algebra \(\A\), the no-go is irrelevant.
+  \item Is support/readout accountability supplied by full central tomography,
+  by a null/gauge/inadmissibility quotient, or by the rank equation
+  \(\operatorname{rank}R_q=\dim(V_q/N_q)\)?
+  \item After accountability, what selects \(q=2\) rather than \(q>2\): a
+  least-event law, an observed \(\log2\) spectral datum, or some other
+  rank-breaking microscopic principle?
+\end{enumerate}
+
+If the answer to the fourth or fifth question is missing, the binary conclusion
+is conditional.  If all five questions have sharp answers, the note provides a
+map for where the positive proof should attach.
+
+\section{How the Standard Reconstructions Enter}
+
+\subsection{Modular and crossed-product data}
+
+Let \(M_0\) and \(M_1\) be von Neumann algebras with faithful normal
+semifinite weights \(\phi_0\) and \(\phi_1\).  For
+\[
+  M=M_0\oplus M_1,\qquad \phi=\phi_0\oplus\phi_1,
+\]
+the modular automorphism group decomposes componentwise:
+\[
+  \sigma_t^\phi=\sigma_t^{\phi_0}\oplus\sigma_t^{\phi_1}.
+\]
+Accordingly, the crossed product decomposes as
+\[
+  M\rtimes_{\sigma^\phi}\R
+  \cong
+  (M_0\rtimes_{\sigma^{\phi_0}}\R)\oplus
+  (M_1\rtimes_{\sigma^{\phi_1}}\R).
+\]
+If the supplied modular or Type II data are formed after quotienting to
+\(M_0\), they are data of \(M_0\).  They do not recover \(M_1\), its finite
+central rank, or its kernel classification.  The full direct-sum core would see
+the second summand, but supplying that full core is precisely an additional
+non-quotient datum.  This is compatible with, and does not weaken, the
+crossed-product entropy program: the entropy is an entropy of the algebra and
+trace actually supplied.
+
+\subsection{Locally covariant QFT and relative Cauchy evolution}
+
+In the Brunetti--Fredenhagen--Verch framework a theory is a functor from
+globally hyperbolic spacetimes to algebras, and relative Cauchy evolution
+measures the response of that supplied functor to metric perturbations.  A
+constant finite central extension
+\[
+  \widehat\A_q(M)=\A(M)\oplus
+  \bigl(\N(M)\bar\otimes\ell^\infty_q\bigr)
+\]
+can be arranged so that the quotient-visible functor, its time-slice maps, and
+its relative Cauchy evolution are exactly those of \(\A\).  The finite central
+summand has zero quotient response because the quotient never asks it a
+question.  This paragraph is not a counterexample to Fewster--Verch dynamical
+locality for a fully specified theory.  It says only that the relative-Cauchy
+and functorial records of the represented quotient do not decide which full
+theory was admitted.  Local covariance and dynamical locality close the gap
+only when imposed on the full admitted theory, or when an independent
+indecomposability, source-generated closure, source faithfulness, or operational
+physicality rule forbids the invisible extension.  They do not, as quotient
+data alone, select \(q=2\).
+
+\subsection{DHR/DR sector data}
+
+DHR and Doplicher--Roberts reconstruction start from a specified observable
+net and a specified category of localized transportable endomorphisms.  If the
+supplied category is the category for \(\A\), and the \(q\) central characters
+in an enlarged algebra are all restricted to the same object of that category,
+then DR reconstruction reconstructs the field algebra and compact gauge group
+associated to the supplied category.  It does not recreate central-character
+fibers that were omitted from the sector datum.  The repair is also exact:
+supply the amplified category \(\mathcal S(\A)\times\{1,\ldots,q\}\), or
+supply another datum that separates the central characters, or prove that the
+central-character fibers are null, gauge, or inadmissible.
+
+\subsection{JLMS and operator-algebra quantum error correction}
+
+Operator-algebra quantum error correction is intentionally algebra-relative.
+Exact recovery of an algebra \(\M\) through a channel says that observables in
+\(\M\) can be represented on the recovery region.  It is downward closed:
+subalgebras of a correctable algebra are correctable.  Therefore exact recovery
+of a diagonal or quotient algebra does not imply that the algebra is maximal
+among all admitted finite central extensions.  JLMS relative-entropy equality
+has the same support: it identifies the relative entropy of the supplied bulk
+and boundary algebras.  To force the finite central rank, one must know that
+the supplied algebra is the full logical algebra, or else supply central
+tomography, central-sector calibration, or a quotient/inadmissibility rule.
+
+\subsection{Entropy and black-hole spectroscopy}
+
+The Bekenstein--Hawking coefficient fixes the ratio between a chosen area
+increment and the entropy of the chosen finite alphabet.  It does not choose the
+alphabet.  For every finite \(q\ge2\), the pair
+\[
+  (S_q,\Delta A_q)=(\log q,4G\hbar\log q)
+\]
+has the exact one-quarter coefficient.  Bekenstein--Mukhanov spectroscopy is
+therefore the natural empirical boundary: a measured line spacing
+\(\log q\), with the measurement channel and propagation model under control,
+would select the observed \(q\).  A \(\log2\) observation would validate the
+binary branch.  But that would be a new \(q\)-sensitive datum, not a derivation
+from quotient-visible entropy/OS/continuum data.
+
+\section{Positive Exits}
+
+The theorem is useful only if it says exactly what would close the obstruction.
+The current exits are:
+\[
+\begin{array}{p{0.34\linewidth}p{0.56\linewidth}}
+\toprule
+Exit & What it proves \\
+\midrule
+Central support faithfulness &
+No nonzero positive finite central projection remains outside the represented
+support. \\
+\addlinespace
+Full ambient central tomography &
+Minimal central projections, central weights, the finite rank \(q\), and the
+predicate \(q=2\) are separated by supplied readouts. \\
+\addlinespace
+Null/gauge/inadmissibility classifier &
+Every invisible finite central direction is removed before full support is
+demanded. \\
+\addlinespace
+Full logical/maximal correctable algebra data &
+Recovery/JLMS data are known to refer to the full admitted logical algebra, not
+only to a downward-closed recovered subalgebra. \\
+\addlinespace
+Full locally covariant/source-generated physicality &
+Response-null finite labels are operationally null or inadmissible, rather
+than untested physical sectors. \\
+\addlinespace
+Support/readout accountability rank &
+For \(V_q=\ell^\infty_q/\C1\), the available readout rank equals
+\(\dim(V_q/N_q)\). \\
+\addlinespace
+Binary finite-alphabet law &
+After accountability, the elementary alphabet is the least nontrivial closed
+quotient, or direct \(q=2\) data with a derived measurement channel is supplied. \\
+\bottomrule
+\end{array}
+\]
+
+These exits are not equivalent.  Support/readout accountability tells us that
+all surviving finite central directions are either read out or removed; it does
+not by itself say that the elementary event alphabet has two outcomes.  The
+binary finite-alphabet law tells us how to count an accountable finite event
+algebra; it does not by itself prove that all physical finite central
+directions have been accounted for.  A successful positive derivation of
+binary rank must supply both.
+
+\section{Primitive Counting After Accountability}
+
+Assume, for this section only, that the finite support problem has been solved:
+the \(q\)-cell lies in the physical algebra, its central idempotents are
+readable or null-quotiented, fixed-area entropy counts operationally preparable
+states, and remnant-free recovery preserves the relevant input distinctions.
+The binary problem still remains.
+
+Let \(C_q=\ell^\infty(\{1,\ldots,q\})\), and suppose all binary coarse-grained
+tests \((\chi_A,1-\chi_A)\) are available for nonempty proper
+\(A\subset\{1,\ldots,q\}\).  This does not imply that the elementary formation
+alphabet has two elements.  For \(q=3\), \(q=4\), or \(q=8\), all such binary
+questions can exist while the complete \(q\)-register remains the elementary
+alphabet.  Landauer cost, Blackwell/Petz sufficiency, and the area law evaluate
+or compare the alphabet after the experiment has been declared; they do not
+choose the experiment.
+
+Thus a finite counting functional is needed.  Three examples are:
+\[
+\begin{array}{ccc}
+\text{least nontrivial quotient} &\mapsto& 2,\\
+\text{complete register} &\mapsto& q,\\
+\text{selected } k\text{-block quotient} &\mapsto& k.
+\end{array}
+\]
+The first rule forces binary.  The second and third do not.  The question for a
+microscopic theory is therefore not whether yes/no propositions can be formed
+inside a finite event algebra; they can.  The question is why the least
+nontrivial quotient, rather than the complete finite register or another
+coarse quotient, is the elementary counted alphabet.  In the present note this
+is an assumption to be derived or measured, not a theorem.
+
+\section{Binary Blocks Versus Elementary Binary Rank}
+
+A recurring ambiguity is the difference between representing a finite alphabet
+with binary variables and proving that the elementary physical alphabet has
+two outcomes.  These are not the same statement.
+
+If \(q=2^m\), then \(C_q\) is abstractly isomorphic to the algebra of functions
+on \(m\) classical bits.  This observation is useful only after the theory has
+also supplied the corresponding tensor/refinement structure as physical.  An
+abstract isomorphism does not say that the \(m\) bit coordinates are available
+as independently preparable, independently readable, or independently counted
+subevents.  Without that extra structure, the complete \(q\)-letter register
+can remain the elementary alphabet even though it admits a binary coding.
+
+If \(q\) is not a power of two, binary source coding embeds the \(q\)-letter
+alphabet into a larger binary code space with unused words.  That again does
+not derive binary rank.  It replaces one physical question by another: why are
+the unused code words inadmissible, null, or gauge, and why is the larger
+binary code space the physical one rather than the original \(q\)-letter
+alphabet?  The embedding is a representation of finite information, not a
+classification of microscopic event atoms.
+
+This distinction matters for \(q=4\) and \(q=8\).  A positive binary theory may
+well reclassify them as composite binary blocks, but it can do so only when it
+owns the binary factorization.  If the physical event algebra is merely a
+symmetric four-letter center with no distinguished coordinate partitions, then
+there is no invariant choice of two bit coordinates.  Choosing one is a
+symmetry-breaking or refinement datum.  Such a datum may be physical, but it is
+not supplied by the quotient-visible data.
+
+Prime \(q>2\) is sharper.  A prime three-letter or five-letter accountable
+register cannot be decomposed into smaller nontrivial Cartesian alphabets.
+For those cases, a binary conclusion must either exclude the register, prove it
+null/gauge/inadmissible, observe a different \(q\), or supply a rule saying
+that the elementary event is a two-outcome quotient rather than the complete
+prime register.  The least nontrivial closed quotient rule does exactly that,
+but it is the rule to be derived.
+
+The same issue appears in statistical sufficiency language.  Minimal
+sufficient statistics are minimal relative to a specified family of future
+experiments.  If the future experiment distinguishes all \(q\) outcomes, the
+full \(q\)-statistic is minimal.  If the future experiment asks only a fixed
+binary question, a binary statistic is sufficient.  Sufficiency theory
+therefore organizes the experiment once the experiment is declared.  It does
+not by itself declare which finite experiment is the microscopic formation
+event.
+
+Landauer erasure has the same limitation.  Erasing a \(k\)-letter classical
+alphabet at temperature \(T\) costs \(k_B T\log k\) in the ideal reversible
+bound.  The formula evaluates the alphabet.  It does not say whether the
+alphabet was \(2\), \(3\), \(4\), or a binary block decomposition of \(4\).  In
+the black-hole application, replacing \(\log k\) by
+\(\Delta A_k/(4G\hbar)\) preserves the same structure: the one-quarter
+coefficient fixes the conversion once \(k\) is known.
+
+Thus Paper 2 should not try to prove binary by pointing to bits as a universal
+language for finite information.  It should prove, assume, or observe one of
+three rank-breaking inputs:
+\begin{enumerate}
+  \item a physical exclusion of every accountable nonbinary elementary
+  register;
+  \item a physical factorization/refinement theorem that demotes composite
+  \(2^m\)-registers to binary blocks and excludes or quotients prime
+  \(q>2\);
+  \item direct \(q\)-sensitive data whose result is \(q=2\).
+\end{enumerate}
+Absent one of these, a binary encoding is notation, not a microscopic
+derivation.
+
+\section{Assumptions Not Proved}
+
+\begin{longtable}{p{0.36\linewidth}p{0.54\linewidth}}
+\toprule
+Assumption & Status in this note \\
+\midrule
+The comparison class admits finite central completions
+\(\widehat\A_q\) for more than one \(q\). &
+This is the countermodel class.  A physical theory may forbid it, but that
+requires an explicit exclusion, quotient, factor, split, or physicality rule. \\
+\addlinespace
+Displayed data factor through the represented quotient. &
+This is the negative theorem's hypothesis.  A positive theorem must show that
+the data do not factor through \(\pi_q\). \\
+\addlinespace
+The target is ambient support, kernel status, finite rank, or binary rank. &
+If the target is only the represented quotient, ordinary positive
+reconstruction theorems are untouched. \\
+\addlinespace
+Support/readout accountability is physically forced. &
+Not proved.  The note only states the finite rank equation that would express
+it. \\
+\addlinespace
+Operational entropy counts exactly preparable finite support. &
+Not proved.  If entropy counts unpreparable labels, Page/recovery arguments do
+not see them. \\
+\addlinespace
+The elementary finite alphabet is the least nontrivial closed quotient. &
+Not proved.  This is the binary-counting law. \\
+\addlinespace
+Direct \(q=2\) spectroscopy exists and its measurement channel is derived. &
+Not supplied.  Such data would validate binary empirically but would not be a
+derivation from quotient-visible data. \\
+\bottomrule
+\end{longtable}
+
+\section{Lean Core}
+
+The accompanying Lean archive
+\[
+  \texttt{docs/support\_readout\_q2\_lean\_verification/}
+\]
+checks only the finite logical core.  It imports Lean's \texttt{Std} library
+and proves:
+\begin{itemize}
+  \item a same-data pair with different target values forbids reconstruction
+  from the data;
+  \item the same statement for a proposition-valued target;
+  \item the blind \(q=2\) and \(q=3\) candidates have the same data but
+  different rank and different truth values of ``rank is two'';
+  \item a missing centered readout/null rank prevents accountability;
+  \item if the least nontrivial event-size rule is supplied for \(q\ge2\), it
+  selects size \(2\).
+\end{itemize}
+It does not formalize von Neumann algebras, DHR theory, locally covariant QFT,
+JLMS, crossed products, or black-hole spectroscopy.  Those are literature
+inputs to the manuscript.  The Lean file is therefore evidence for the finite
+descent kernel, not evidence for the analytic or physical assumptions.
+
+\section{Conclusion}
+
+The support/readout obstruction is not a failure of AQFT or quantum
+information reconstruction.  It is a boundary on what the displayed data are
+allowed to imply.  If all data factor through a represented quotient, they
+cannot decide the status or rank of an invisible finite central kernel.  If the
+finite center is made accountable, entropy still does not choose \(q=2\);
+binary rank needs a finite-alphabet law or direct binary data.
+
+This turns the remaining binary problem into a short checklist.  A positive
+theory must either derive support/readout accountability and then derive the
+least-nontrivial-alphabet law, or it must produce a \(q\)-sensitive measurement
+whose channel is itself part of the theory and whose outcome is \(\log2\).
+Without one of those routes, the honest conclusion is conditional framework,
+not primitive unavoidability.
+
+\begin{thebibliography}{99}
+
+\bibitem{BFV}
+R.~Brunetti, K.~Fredenhagen, and R.~Verch,
+``The generally covariant locality principle: A new paradigm for local quantum
+physics,''
+Commun. Math. Phys. \textbf{237} (2003), 31--68,
+arXiv:math-ph/0112041.
+
+\bibitem{FewsterVerch}
+C.~J. Fewster and R.~Verch,
+``Dynamical locality and covariance: What makes a physical theory the same in
+all spacetimes?''
+Ann. Henri Poincare \textbf{13} (2012), 1613--1674,
+arXiv:1106.4785.
+
+\bibitem{DHR1}
+S.~Doplicher, R.~Haag, and J.~E. Roberts,
+``Local observables and particle statistics I,''
+Commun. Math. Phys. \textbf{23} (1971), 199--230.
+
+\bibitem{DHR2}
+S.~Doplicher, R.~Haag, and J.~E. Roberts,
+``Local observables and particle statistics II,''
+Commun. Math. Phys. \textbf{35} (1974), 49--85.
+
+\bibitem{DR}
+S.~Doplicher and J.~E. Roberts,
+``Why there is a field algebra with a compact gauge group describing the
+superselection structure in particle physics,''
+Commun. Math. Phys. \textbf{131} (1990), 51--107.
+
+\bibitem{JLMS}
+D.~L. Jafferis, A.~Lewkowycz, J.~Maldacena, and S.~J. Suh,
+``Relative entropy equals bulk relative entropy,''
+JHEP \textbf{06} (2016), 004,
+arXiv:1512.06431.
+
+\bibitem{HarlowRT}
+D.~Harlow,
+``The Ryu--Takayanagi Formula from Quantum Error Correction,''
+Commun. Math. Phys. \textbf{354} (2017), 865--912,
+arXiv:1607.03901.
+
+\bibitem{DHW}
+X.~Dong, D.~Harlow, and A.~C. Wall,
+``Reconstruction of Bulk Operators within the Entanglement Wedge in
+Gauge-Gravity Duality,''
+Phys. Rev. Lett. \textbf{117} (2016), 021601,
+arXiv:1601.05416.
+
+\bibitem{KangKolchmeyer}
+M.~J. Kang and D.~K. Kolchmeyer,
+``Holographic Relative Entropy in Infinite-dimensional Hilbert Spaces,''
+Commun. Math. Phys. (2023),
+arXiv:1811.05482.
+
+\bibitem{WittenCrossed}
+E.~Witten,
+``Gravity and the Crossed Product,''
+JHEP \textbf{10} (2022), 008,
+arXiv:2112.12828.
+
+\bibitem{CLPW}
+V.~Chandrasekaran, R.~Longo, G.~Penington, and E.~Witten,
+``An Algebra of Observables for de Sitter Space,''
+JHEP \textbf{02} (2023), 082,
+arXiv:2206.10780.
+
+\bibitem{CPW}
+V.~Chandrasekaran, G.~Penington, and E.~Witten,
+``Large \(N\) Algebras and Generalized Entropy,''
+JHEP \textbf{04} (2023), 009,
+arXiv:2209.10454.
+
+\bibitem{BekensteinMukhanov}
+J.~D. Bekenstein and V.~F. Mukhanov,
+``Spectroscopy of the quantum black hole,''
+Phys. Lett. B \textbf{360} (1995), 7--12,
+arXiv:gr-qc/9505012.
+
+\end{thebibliography}
+
+\end{document}
