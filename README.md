@@ -17,7 +17,8 @@ derivation of black-hole entropy, or a proof that binary rank is physically
 forced.
 
 External reviewers can start with `REVIEWER_START_HERE.md` and, if useful,
-return `REVIEW_RESPONSE_TEMPLATE.md`.
+return `REVIEW_RESPONSE_TEMPLATE.md`. The non-frozen literature attack map is
+`docs/support_readout_q2_literature_boundary_index.md`.
 
 ## Contents
 
@@ -34,6 +35,9 @@ return `REVIEW_RESPONSE_TEMPLATE.md`.
 - `docs/support_readout_q2_external_review_request.md`: reviewer request.
 - `docs/support_readout_q2_novelty_adjudication.md`: novelty and demotion
   boundary.
+- `docs/support_readout_q2_literature_boundary_index.md`: referee-facing
+  primary-source attack matrix for known-result demotion, hidden-premise
+  objections, and claim preservation.
 - `docs/support_readout_q2_public_mirror_SHA256SUMS.txt`: public mirror hashes.
 
 ## Verify Hashes
@@ -110,6 +114,12 @@ The requested review is intentionally direct:
    the finite central completions, or are they additional positive assumptions?
 3. Is support/readout accountability plus a finite-alphabet law or direct
    `q=2` measurement too strong as the positive route to binary rank?
+
+The literature-boundary index lists the primary sources to check first: BFV
+locally covariant QFT, Fewster-Verch dynamical locality and local measurements,
+Doplicher-Roberts reconstruction, JLMS/OAQEC, Blackwell/Petz/Buscemi
+sufficiency, generalized-entropy/crossed-product programs, and
+Bekenstein-Mukhanov spectroscopy.
 
 If an exact standard theorem already states this support/readout criterion and
 binary-rank obstruction, the novelty claim should be demoted before the theorem

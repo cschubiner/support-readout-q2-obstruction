@@ -20,7 +20,9 @@ the main claim as one of:
 2. Read `docs/support_readout_q2_obstruction_manuscript.pdf`.
 3. Check the novelty boundary in
    `docs/support_readout_q2_novelty_adjudication.md`.
-4. Verify the finite Lean kernel if desired:
+4. Check the primary-source attack map in
+   `docs/support_readout_q2_literature_boundary_index.md`.
+5. Verify the finite Lean kernel if desired:
 
 ```bash
 shasum -a 256 -c docs/support_readout_q2_public_mirror_SHA256SUMS.txt
