@@ -1,5 +1,7 @@
 # Support, Readout, and the Binary-Rank Obstruction
 
+[![Verify frozen package](https://github.com/cschubiner/support-readout-q2-obstruction/actions/workflows/verify-frozen-package.yml/badge.svg)](https://github.com/cschubiner/support-readout-q2-obstruction/actions/workflows/verify-frozen-package.yml)
+
 This repository is an exact public verification mirror for the frozen
 support/readout `q=2` obstruction package.
 
@@ -42,6 +44,8 @@ https://github.com/cschubiner/support-readout-q2-obstruction/issues/1
   primary-source attack matrix for known-result demotion, hidden-premise
   objections, and claim preservation.
 - `docs/support_readout_q2_public_mirror_SHA256SUMS.txt`: public mirror hashes.
+- `.github/workflows/verify-frozen-package.yml`: public CI for frozen hashes
+  and the Lean kernel.
 
 ## Verify Hashes
 

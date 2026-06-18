@@ -17,6 +17,9 @@ the main claim as one of:
 Public review thread:
 https://github.com/cschubiner/support-readout-q2-obstruction/issues/1
 
+Public verification workflow:
+https://github.com/cschubiner/support-readout-q2-obstruction/actions/workflows/verify-frozen-package.yml
+
 ## What To Inspect First
 
 1. Read `docs/support_readout_q2_external_review_request.md`.
