@@ -20,6 +20,9 @@ External reviewers can start with `REVIEWER_START_HERE.md` and, if useful,
 return `REVIEW_RESPONSE_TEMPLATE.md`. The non-frozen literature attack map is
 `docs/support_readout_q2_literature_boundary_index.md`.
 
+Public review thread:
+https://github.com/cschubiner/support-readout-q2-obstruction/issues/1
+
 ## Contents
 
 - `docs/support_readout_q2_obstruction_manuscript.pdf`: frozen manuscript.
@@ -124,3 +127,6 @@ Bekenstein-Mukhanov spectroscopy.
 If an exact standard theorem already states this support/readout criterion and
 binary-rank obstruction, the novelty claim should be demoted before the theorem
 surface is changed.
+
+Public responses can be left on:
+https://github.com/cschubiner/support-readout-q2-obstruction/issues/1

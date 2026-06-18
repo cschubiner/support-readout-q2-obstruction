@@ -14,6 +14,9 @@ the main claim as one of:
 - package/hash/build issue;
 - new but checkable finite-central classification.
 
+Public review thread:
+https://github.com/cschubiner/support-readout-q2-obstruction/issues/1
+
 ## What To Inspect First
 
 1. Read `docs/support_readout_q2_external_review_request.md`.
@@ -58,3 +61,6 @@ short, source-specific, and decisive enough to drive one of these actions:
 - preserve the frozen package as a new-but-checkable classification.
 
 Silence, informal interest, or encouragement is not adjudication.
+
+Public responses can be left on:
+https://github.com/cschubiner/support-readout-q2-obstruction/issues/1
