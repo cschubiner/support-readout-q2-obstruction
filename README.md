@@ -22,6 +22,9 @@ External reviewers can start with `REVIEWER_START_HERE.md` and, if useful,
 return `REVIEW_RESPONSE_TEMPLATE.md`. The non-frozen literature attack map is
 `docs/support_readout_q2_literature_boundary_index.md`.
 
+Public review and verification status:
+`PUBLIC_REVIEW_STATUS.md`
+
 Public review thread:
 https://github.com/cschubiner/support-readout-q2-obstruction/issues/1
 
@@ -46,6 +49,8 @@ https://github.com/cschubiner/support-readout-q2-obstruction/issues/1
 - `docs/support_readout_q2_public_mirror_SHA256SUMS.txt`: public mirror hashes.
 - `.github/workflows/verify-frozen-package.yml`: public CI for frozen hashes
   and the Lean kernel.
+- `PUBLIC_REVIEW_STATUS.md`: public ledger of frozen release, CI, review issue,
+  and adjudication state.
 
 ## Verify Hashes
 

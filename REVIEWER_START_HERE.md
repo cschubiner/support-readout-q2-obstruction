@@ -20,15 +20,19 @@ https://github.com/cschubiner/support-readout-q2-obstruction/issues/1
 Public verification workflow:
 https://github.com/cschubiner/support-readout-q2-obstruction/actions/workflows/verify-frozen-package.yml
 
+Public review and verification status:
+`PUBLIC_REVIEW_STATUS.md`
+
 ## What To Inspect First
 
-1. Read `docs/support_readout_q2_external_review_request.md`.
-2. Read `docs/support_readout_q2_obstruction_manuscript.pdf`.
-3. Check the novelty boundary in
+1. Read `PUBLIC_REVIEW_STATUS.md`.
+2. Read `docs/support_readout_q2_external_review_request.md`.
+3. Read `docs/support_readout_q2_obstruction_manuscript.pdf`.
+4. Check the novelty boundary in
    `docs/support_readout_q2_novelty_adjudication.md`.
-4. Check the primary-source attack map in
+5. Check the primary-source attack map in
    `docs/support_readout_q2_literature_boundary_index.md`.
-5. Verify the finite Lean kernel if desired:
+6. Verify the finite Lean kernel if desired:
 
 ```bash
 shasum -a 256 -c docs/support_readout_q2_public_mirror_SHA256SUMS.txt
