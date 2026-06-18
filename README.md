@@ -16,6 +16,9 @@ DHR/Doplicher-Roberts reconstruction theorem, a new JLMS/OAQEC theorem, a
 derivation of black-hole entropy, or a proof that binary rank is physically
 forced.
 
+External reviewers can start with `REVIEWER_START_HERE.md` and, if useful,
+return `REVIEW_RESPONSE_TEMPLATE.md`.
+
 ## Contents
 
 - `docs/support_readout_q2_obstruction_manuscript.pdf`: frozen manuscript.
