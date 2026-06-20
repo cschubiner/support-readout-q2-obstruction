@@ -44,7 +44,10 @@ is too broad.
 For the concrete LCQFT/RCE countermodel family now under review, see
 `docs/team1_lcqft_constant_center_extension_note.md`.
 For the concrete OAQEC/JLMS algebra-relative nonmaximality test, see
-`docs/team1_oaqec_jlms_algebra_relative_nonmaximality_note.md`.
+`docs/team1_oaqec_jlms_algebra_relative_nonmaximality_note.md`; the compact
+TeX/PDF review version is
+`docs/team1_oaqec_jlms_algebra_relative_nonmaximality_short_note.tex` /
+`docs/team1_oaqec_jlms_algebra_relative_nonmaximality_short_note.pdf`.
 
 ## Positive-Exit Adjudication Map
 
@@ -72,10 +75,12 @@ row becomes an explicit BFV/time-slice/RCE non-identifiability example.
 
 The OAQEC/JLMS row has now been sharpened to a concrete direct-sum
 nonmaximality test in
-`docs/team1_oaqec_jlms_algebra_relative_nonmaximality_note.md`.  A reviewer can
-kill it by naming the OAQEC/JLMS hypothesis that makes the supplied code
-algebra maximal; otherwise the row becomes an explicit algebra-relative
-recovery example.
+`docs/team1_oaqec_jlms_algebra_relative_nonmaximality_note.md`, with the
+standalone short note
+`docs/team1_oaqec_jlms_algebra_relative_nonmaximality_short_note.pdf`.  A
+reviewer can kill it by naming the OAQEC/JLMS hypothesis that makes the
+supplied code algebra maximal; otherwise the row becomes an explicit
+algebra-relative recovery example.
 
 For a two-week frontier push, Team 1 should attempt to turn one row above into
 a precise theorem-or-demotion statement:

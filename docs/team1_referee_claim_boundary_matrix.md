@@ -35,7 +35,9 @@ For the stricter standard-theorem demotion pass, see
 For the concrete LCQFT constant-center extension test, see
 `docs/team1_lcqft_constant_center_extension_note.md`.
 For the concrete OAQEC/JLMS algebra-relative nonmaximality test, see
-`docs/team1_oaqec_jlms_algebra_relative_nonmaximality_note.md`.
+`docs/team1_oaqec_jlms_algebra_relative_nonmaximality_note.md` and the
+standalone review PDF
+`docs/team1_oaqec_jlms_algebra_relative_nonmaximality_short_note.pdf`.
 
 ## Primary-Source Boundary Pass
 
@@ -86,7 +88,9 @@ entropy, or black-hole spectroscopy. For the LCQFT/dynamical-locality lane,
 send `docs/team1_lcqft_constant_center_extension_note.md` as the concrete
 claim to classify.
 For the OAQEC/JLMS lane, send
-`docs/team1_oaqec_jlms_algebra_relative_nonmaximality_note.md`.
+`docs/team1_oaqec_jlms_algebra_relative_nonmaximality_note.md` plus the compact
+short note
+`docs/team1_oaqec_jlms_algebra_relative_nonmaximality_short_note.pdf`.
 
 ## One-Week Frontier Work
 
