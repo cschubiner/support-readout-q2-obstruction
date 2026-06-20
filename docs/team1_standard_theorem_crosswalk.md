@@ -42,17 +42,22 @@ is too broad.
 | Binary spectroscopy | Bekenstein-Mukhanov, `arXiv:gr-qc/9505012` | Do not claim entropy alone derives a binary alphabet. Resolved spectroscopy is a separate measurement route. | Is there a weaker standard axiom forcing `q=2` without a finite-alphabet law or direct binary measurement? |
 
 For the concrete LCQFT/RCE countermodel family now under review, see
-`docs/team1_lcqft_constant_center_extension_note.md`.
+`team1_lcqft_constant_center_extension_note.md`.
 For the concrete OAQEC/JLMS algebra-relative nonmaximality test, see
-`docs/team1_oaqec_jlms_algebra_relative_nonmaximality_note.md`; the compact
+`team1_oaqec_jlms_algebra_relative_nonmaximality_note.md`; the compact
 TeX/PDF review version is
-`docs/team1_oaqec_jlms_algebra_relative_nonmaximality_short_note.tex` /
-`docs/team1_oaqec_jlms_algebra_relative_nonmaximality_short_note.pdf`.
+`team1_oaqec_jlms_algebra_relative_nonmaximality_short_note.tex` /
+`team1_oaqec_jlms_algebra_relative_nonmaximality_short_note.pdf`.
 For the concrete DHR/DR sector-character nonmaximality test, see
-`docs/team1_dhr_dr_sector_character_nonmaximality_note.md`; the compact TeX/PDF
+`team1_dhr_dr_sector_character_nonmaximality_note.md`; the compact TeX/PDF
 review version is
-`docs/team1_dhr_dr_sector_character_nonmaximality_short_note.tex` /
-`docs/team1_dhr_dr_sector_character_nonmaximality_short_note.pdf`.
+`team1_dhr_dr_sector_character_nonmaximality_short_note.tex` /
+`team1_dhr_dr_sector_character_nonmaximality_short_note.pdf`.
+For the concrete crossed-product entropy calibration boundary test, see
+`team1_crossed_product_entropy_calibration_note.md`; the compact TeX/PDF
+review version is
+`team1_crossed_product_entropy_calibration_short_note.tex` /
+`team1_crossed_product_entropy_calibration_short_note.pdf`.
 
 ## Positive-Exit Adjudication Map
 
@@ -74,33 +79,42 @@ channel, or experiment.
 | Discrete spectroscopy | Bekenstein-Mukhanov, `arXiv:gr-qc/9505012` | There is a direct finite-alphabet measurement law, or a standard physical axiom deriving binary rank without one. | Entropy/recovery records alone do not force `q=2`; binary rank is a separate measurement or dynamics input. |
 
 The LCQFT row has now been sharpened to a concrete constant-center extension
-test in `docs/team1_lcqft_constant_center_extension_note.md`.  A reviewer can
+test in `team1_lcqft_constant_center_extension_note.md`.  A reviewer can
 kill it by naming the LCQFT axiom that forbids the construction; otherwise the
 row becomes an explicit BFV/time-slice/RCE non-identifiability example.
 
 The OAQEC/JLMS row has now been sharpened to a concrete direct-sum
 nonmaximality test in
-`docs/team1_oaqec_jlms_algebra_relative_nonmaximality_note.md`, with the
+`team1_oaqec_jlms_algebra_relative_nonmaximality_note.md`, with the
 standalone short note
-`docs/team1_oaqec_jlms_algebra_relative_nonmaximality_short_note.pdf`.  A
+`team1_oaqec_jlms_algebra_relative_nonmaximality_short_note.pdf`.  A
 reviewer can kill it by naming the OAQEC/JLMS hypothesis that makes the
 supplied code algebra maximal; otherwise the row becomes an explicit
 algebra-relative recovery example.
 
 The DHR/DR row has now been sharpened to a concrete sector-character
 nonmaximality test in
-`docs/team1_dhr_dr_sector_character_nonmaximality_note.md`, with the standalone
-short note `docs/team1_dhr_dr_sector_character_nonmaximality_short_note.pdf`.
+`team1_dhr_dr_sector_character_nonmaximality_note.md`, with the standalone
+short note `team1_dhr_dr_sector_character_nonmaximality_short_note.pdf`.
 A reviewer can kill it by naming the DHR/DR hypothesis that makes the supplied
 sector category faithful on finite central-character fibers; otherwise the row
 becomes an explicit supplied-category nonfaithfulness example.
 
 The Blackwell/Le Cam/Petz/Buscemi row has now been internally demoted in
-`docs/team1_positive_accountability_theorem_note.md` and
-`docs/team1_positive_accountability_short_note.pdf`: the finite-accountability
+`team1_positive_accountability_theorem_note.md` and
+`team1_positive_accountability_short_note.pdf`: the finite-accountability
 quotient is known sufficiency/factorization theory.  The remaining candidate
 value is only the black-hole/AQFT translation and the warning that binary rank
 requires sufficiency for that exact finite-center target.
+
+The crossed-product entropy row has now been sharpened to a concrete
+calibration-boundary test in
+`team1_crossed_product_entropy_calibration_note.md`, with the standalone
+short note `team1_crossed_product_entropy_calibration_short_note.pdf`.
+A reviewer can kill it by naming the crossed-product or gravitational Type II
+hypothesis that fixes the same finite central trace/area calibration; otherwise
+the row becomes an explicit warning that Type II entropy is defined for the
+supplied algebra and trace, not for omitted finite-center normalization data.
 
 For a two-week frontier push, Team 1 should attempt to turn one row above into
 a precise theorem-or-demotion statement:
@@ -139,25 +153,25 @@ This is the sentence to ask experts to classify as `known`, `false`, `missing
 hypothesis`, `too broad`, or `plausibly new`.
 
 For the explicit finite-center theorem residue and proof skeleton, see
-`docs/team1_finite_center_residue_theorem_note.md`.
+`team1_finite_center_residue_theorem_note.md`.
 
 For the constructive positive exit from that residue, see
-`docs/team1_positive_accountability_theorem_note.md`.
+`team1_positive_accountability_theorem_note.md`.
 The shortest referee-facing version is the four-page TeX/PDF note
-`docs/team1_positive_accountability_short_note.tex` /
-`docs/team1_positive_accountability_short_note.pdf`.
+`team1_positive_accountability_short_note.tex` /
+`team1_positive_accountability_short_note.pdf`.
 
 For the current internal verdict on novelty and publication posture, see
-`docs/team1_self_adjudication_decision_memo.md`.
+`team1_self_adjudication_decision_memo.md`.
 
 ## Next External Action
 
 Send the crosswalk together with
-`docs/team1_referee_claim_boundary_matrix.md` and
-`docs/team1_finite_center_residue_theorem_note.md` to the first-wave reviewers
+`team1_referee_claim_boundary_matrix.md` and
+`team1_finite_center_residue_theorem_note.md` to the first-wave reviewers
 when they ask for a narrower target. If they ask for the positive route rather
 than the obstruction, add
-`docs/team1_positive_accountability_short_note.pdf` plus
-`docs/team1_positive_accountability_theorem_note.md`. The best response is not
+`team1_positive_accountability_short_note.pdf` plus
+`team1_positive_accountability_theorem_note.md`. The best response is not
 a long report; it is the exact standard theorem or missing hypothesis that
 decides whether the residue above is publishable.
