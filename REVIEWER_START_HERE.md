@@ -43,7 +43,9 @@ Public review and verification status:
    is useful.
 9. For the current internal novelty verdict, read
    `docs/team1_self_adjudication_decision_memo.md`.
-10. Verify the finite Lean kernel if desired:
+10. For how responses will be classified into source actions, read
+   `docs/team1_external_review_response_triage.md`.
+11. Verify the finite Lean kernel if desired:
 
 ```bash
 shasum -a 256 -c docs/support_readout_q2_public_mirror_SHA256SUMS.txt
@@ -77,6 +79,8 @@ black-hole spectroscopy.
    Blackwell/Petz sufficiency under another name, or a useful AQFT/black-hole
    reconstruction boundary?
 8. Is the self-adjudication memo too harsh, too generous, or correctly framed?
+9. Does `docs/team1_external_review_response_triage.md` map your response to
+   the right minimum action?
 
 ## Response Format
 

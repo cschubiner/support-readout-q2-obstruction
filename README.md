@@ -33,6 +33,8 @@ The shortest PDF version is
 `docs/team1_positive_accountability_short_note.tex`.
 For the current internal novelty/publication verdict, use
 `docs/team1_self_adjudication_decision_memo.md`.
+For maintainer-side response classification, use
+`docs/team1_external_review_response_triage.md`.
 
 Public review and verification status:
 `PUBLIC_REVIEW_STATUS.md`
@@ -72,6 +74,8 @@ https://github.com/cschubiner/support-readout-q2-obstruction/issues/1
   referee-facing note.
 - `docs/team1_self_adjudication_decision_memo.md`: internal publication
   posture and novelty demotion memo.
+- `docs/team1_external_review_response_triage.md`: maintainer-side protocol
+  mapping written external responses to minimum source actions.
 - `docs/support_readout_q2_public_mirror_SHA256SUMS.txt`: public mirror hashes.
 - `.github/workflows/verify-frozen-package.yml`: public CI for frozen hashes
   and the Lean kernel.
@@ -174,6 +178,8 @@ The compact referee-facing PDF is
 `docs/team1_positive_accountability_short_note.pdf`.
 The internal publication posture is in
 `docs/team1_self_adjudication_decision_memo.md`.
+The response triage protocol is in
+`docs/team1_external_review_response_triage.md`.
 
 Public responses can be left on:
 https://github.com/cschubiner/support-readout-q2-obstruction/issues/1
