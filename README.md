@@ -24,6 +24,8 @@ return `REVIEW_RESPONSE_TEMPLATE.md`. The non-frozen literature attack map is
 For a stricter first-pass classification, use
 `docs/team1_standard_theorem_crosswalk.md` and
 `docs/team1_referee_claim_boundary_matrix.md`.
+For the narrow theorem residue to classify directly, use
+`docs/team1_finite_center_residue_theorem_note.md`.
 
 Public review and verification status:
 `PUBLIC_REVIEW_STATUS.md`
@@ -53,6 +55,8 @@ https://github.com/cschubiner/support-readout-q2-obstruction/issues/1
   matrix for finite-center support/readout adjudication.
 - `docs/team1_standard_theorem_crosswalk.md`: demotion map separating standard
   theorem lanes from the possible publishable residue.
+- `docs/team1_finite_center_residue_theorem_note.md`: compact theorem residue
+  and proof skeleton for the finite-center no-go claim.
 - `docs/support_readout_q2_public_mirror_SHA256SUMS.txt`: public mirror hashes.
 - `.github/workflows/verify-frozen-package.yml`: public CI for frozen hashes
   and the Lean kernel.
@@ -146,6 +150,8 @@ surface is changed.
 
 The crosswalk in `docs/team1_standard_theorem_crosswalk.md` is the preferred
 one-page route for that demotion check.
+The theorem residue in `docs/team1_finite_center_residue_theorem_note.md` is
+the shortest statement to classify directly.
 
 Public responses can be left on:
 https://github.com/cschubiner/support-readout-q2-obstruction/issues/1
