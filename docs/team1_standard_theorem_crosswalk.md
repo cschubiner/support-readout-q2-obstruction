@@ -72,6 +72,9 @@ For the explicit finite-center theorem residue and proof skeleton, see
 
 For the constructive positive exit from that residue, see
 `docs/team1_positive_accountability_theorem_note.md`.
+The shortest referee-facing version is the four-page TeX/PDF note
+`docs/team1_positive_accountability_short_note.tex` /
+`docs/team1_positive_accountability_short_note.pdf`.
 
 For the current internal verdict on novelty and publication posture, see
 `docs/team1_self_adjudication_decision_memo.md`.
@@ -83,6 +86,7 @@ Send the crosswalk together with
 `docs/team1_finite_center_residue_theorem_note.md` to the first-wave reviewers
 when they ask for a narrower target. If they ask for the positive route rather
 than the obstruction, add
+`docs/team1_positive_accountability_short_note.pdf` plus
 `docs/team1_positive_accountability_theorem_note.md`. The best response is not
 a long report; it is the exact standard theorem or missing hypothesis that
 decides whether the residue above is publishable.

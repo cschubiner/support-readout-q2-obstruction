@@ -28,6 +28,9 @@ For the narrow theorem residue to classify directly, use
 `docs/team1_finite_center_residue_theorem_note.md`.
 For the constructive positive exit from that residue, use
 `docs/team1_positive_accountability_theorem_note.md`.
+The shortest PDF version is
+`docs/team1_positive_accountability_short_note.pdf`, with source
+`docs/team1_positive_accountability_short_note.tex`.
 For the current internal novelty/publication verdict, use
 `docs/team1_self_adjudication_decision_memo.md`.
 
@@ -63,6 +66,10 @@ https://github.com/cschubiner/support-readout-q2-obstruction/issues/1
   and proof skeleton for the finite-center no-go claim.
 - `docs/team1_positive_accountability_theorem_note.md`: constructive
   criterion for when finite-center rank and `q=2` become recoverable.
+- `docs/team1_positive_accountability_short_note.tex`: four-page
+  referee-facing source for the positive accountability criterion.
+- `docs/team1_positive_accountability_short_note.pdf`: compiled four-page
+  referee-facing note.
 - `docs/team1_self_adjudication_decision_memo.md`: internal publication
   posture and novelty demotion memo.
 - `docs/support_readout_q2_public_mirror_SHA256SUMS.txt`: public mirror hashes.
@@ -163,6 +170,8 @@ the shortest statement to classify directly.
 The positive accountability theorem note in
 `docs/team1_positive_accountability_theorem_note.md` states the constructive
 route that would make finite-center rank or `q=2` recoverable.
+The compact referee-facing PDF is
+`docs/team1_positive_accountability_short_note.pdf`.
 The internal publication posture is in
 `docs/team1_self_adjudication_decision_memo.md`.
 
