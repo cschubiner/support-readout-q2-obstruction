@@ -23,6 +23,9 @@ https://github.com/cschubiner/support-readout-q2-obstruction/actions/workflows/v
 Public review and verification status:
 `PUBLIC_REVIEW_STATUS.md`
 
+Structured public review issue template:
+`.github/ISSUE_TEMPLATE/external-review-classification.md`
+
 ## What To Inspect First
 
 1. Read `PUBLIC_REVIEW_STATUS.md`.
@@ -96,3 +99,5 @@ Silence, informal interest, or encouragement is not adjudication.
 
 Public responses can be left on:
 https://github.com/cschubiner/support-readout-q2-obstruction/issues/1
+
+New public review issues can use the external review classification template.
