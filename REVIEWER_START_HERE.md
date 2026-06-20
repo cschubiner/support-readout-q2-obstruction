@@ -29,28 +29,30 @@ Structured public review issue template:
 ## What To Inspect First
 
 1. Read `PUBLIC_REVIEW_STATUS.md`.
-2. Read `docs/team1_external_review_dispatch_dossier.md` for the compact
+2. Read `docs/team1_minimal_expert_classification_request.md` for the fastest
+   one-page verdict request.
+3. Read `docs/team1_external_review_dispatch_dossier.md` for the compact
    row-by-row attack packet.
-3. Read `docs/support_readout_q2_external_review_request.md`.
-4. Read `docs/support_readout_q2_obstruction_manuscript.pdf`.
-5. Check the novelty boundary in
+4. Read `docs/support_readout_q2_external_review_request.md`.
+5. Read `docs/support_readout_q2_obstruction_manuscript.pdf`.
+6. Check the novelty boundary in
    `docs/support_readout_q2_novelty_adjudication.md`.
-6. Check the primary-source attack map in
+7. Check the primary-source attack map in
    `docs/support_readout_q2_literature_boundary_index.md`.
-7. For a quick standard-theorem demotion pass, read
+8. For a quick standard-theorem demotion pass, read
    `docs/team1_standard_theorem_crosswalk.md` and
    `docs/team1_referee_claim_boundary_matrix.md`.
-8. For the shortest theorem target, read
+9. For the shortest theorem target, read
    `docs/team1_finite_center_residue_theorem_note.md`.
-9. For the positive accountability criterion, read
+10. For the positive accountability criterion, read
    `docs/team1_positive_accountability_short_note.pdf`, then
    `docs/team1_positive_accountability_theorem_note.md` if a proof-note view
    is useful.
-10. For the current internal novelty verdict, read
+11. For the current internal novelty verdict, read
    `docs/team1_self_adjudication_decision_memo.md`.
-11. For how responses will be classified into source actions, read
+12. For how responses will be classified into source actions, read
    `docs/team1_external_review_response_triage.md`.
-12. Verify the finite Lean kernel if desired:
+13. Verify the finite Lean kernel if desired:
 
 ```bash
 shasum -a 256 -c docs/support_readout_q2_public_mirror_SHA256SUMS.txt

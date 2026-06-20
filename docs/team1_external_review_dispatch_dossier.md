@@ -51,6 +51,7 @@ No written external adjudication response has been logged yet.
 
 ## First Files To Read
 
+0. `team1_minimal_expert_classification_request.md`
 1. `team1_self_adjudication_decision_memo.md`
 2. `team1_referee_claim_boundary_matrix.md`
 3. `team1_standard_theorem_crosswalk.md`
