@@ -33,7 +33,9 @@ adjudication.
 
 - Public issue:
   https://github.com/cschubiner/support-readout-q2-obstruction/issues/1
-- Current known public response state at this status update: no public comments.
+- Current known public response state at this status update: maintainer metadata
+  comments are present; no written external adjudication response has been
+  logged.
 
 The issue is the preferred public place to report one of:
 
