@@ -37,9 +37,11 @@ Public review and verification status:
    `docs/team1_referee_claim_boundary_matrix.md`.
 7. For the shortest theorem target, read
    `docs/team1_finite_center_residue_theorem_note.md`.
-8. For the current internal novelty verdict, read
+8. For the positive accountability criterion, read
+   `docs/team1_positive_accountability_theorem_note.md`.
+9. For the current internal novelty verdict, read
    `docs/team1_self_adjudication_decision_memo.md`.
-9. Verify the finite Lean kernel if desired:
+10. Verify the finite Lean kernel if desired:
 
 ```bash
 shasum -a 256 -c docs/support_readout_q2_public_mirror_SHA256SUMS.txt
@@ -68,7 +70,11 @@ black-hole spectroscopy.
 6. Is the residue lemma in
    `docs/team1_finite_center_residue_theorem_note.md` standard, false, too
    broad, or publishable as a finite-center corollary?
-7. Is the self-adjudication memo too harsh, too generous, or correctly framed?
+7. Is the positive criterion in
+   `docs/team1_positive_accountability_theorem_note.md` just finite
+   Blackwell/Petz sufficiency under another name, or a useful AQFT/black-hole
+   reconstruction boundary?
+8. Is the self-adjudication memo too harsh, too generous, or correctly framed?
 
 ## Response Format
 
