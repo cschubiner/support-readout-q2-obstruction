@@ -3,8 +3,8 @@
 Status: live referee-facing theorem note. This is not a frozen manuscript or
 Lean artifact.
 
-Short TeX/PDF version: `docs/team1_lcqft_constant_center_short_note.tex` /
-`docs/team1_lcqft_constant_center_short_note.pdf`.
+Short TeX/PDF version: `team1_lcqft_constant_center_short_note.tex` /
+`team1_lcqft_constant_center_short_note.pdf`.
 
 Purpose: turn the LCQFT/dynamical-locality adjudication row into a concrete
 standard-language test. The target is not a new LCQFT construction. The target
@@ -114,6 +114,33 @@ This proposition is deliberately narrow. It says that the standard
 RCE-defined dynamical-locality equality does not by itself remove a constant
 finite center. It does not say that every stronger physical admissibility
 principle permits the extension.
+
+## Proposition: Extended Locality and Local Definiteness Kill The Extension
+
+Let `q > 1`. Suppose a spacetime `M` contains two nonempty causally disjoint
+admissible regions `O_1,O_2`, and write their kinematic images in `A_q(M)` as
+`(A_q)_kin(M;O_i)`. Then
+
+```text
+C 1_{A(M)} tensor Z_q
+    subset (A_q)_kin(M;O_1) cap (A_q)_kin(M;O_2).
+```
+
+Indeed, for every admissible inclusion `iota_O : M|O -> M`, the element
+`1_{A(M|O)} tensor z` maps to `1_{A(M)} tensor z`. Thus every nonempty local
+kinematic algebra contains the same central copy of `Z_q`.
+
+Consequently `A_q` violates any extended-locality axiom requiring local
+algebras of causally disjoint nonempty regions to intersect only in scalars.
+It also violates any local-definiteness axiom requiring the intersection of
+algebras for regions shrinking to a point to be only `C1`, because the constant
+finite center remains in every local algebra.
+
+This is a positive exit, not a contradiction of the RCE-inheritance
+proposition. If the intended LCQFT framework includes extended locality, local
+definiteness, indecomposability, or an equivalent center-reduction axiom, then
+the constant finite-center comparison class is inadmissible and Team 1 should
+demote the LCQFT row to that named axiom.
 
 ## Positive Exits That Kill The Extension
 
