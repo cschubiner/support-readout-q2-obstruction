@@ -26,6 +26,8 @@ For a stricter first-pass classification, use
 `docs/team1_referee_claim_boundary_matrix.md`.
 For the narrow theorem residue to classify directly, use
 `docs/team1_finite_center_residue_theorem_note.md`.
+For the current internal novelty/publication verdict, use
+`docs/team1_self_adjudication_decision_memo.md`.
 
 Public review and verification status:
 `PUBLIC_REVIEW_STATUS.md`
@@ -57,6 +59,8 @@ https://github.com/cschubiner/support-readout-q2-obstruction/issues/1
   theorem lanes from the possible publishable residue.
 - `docs/team1_finite_center_residue_theorem_note.md`: compact theorem residue
   and proof skeleton for the finite-center no-go claim.
+- `docs/team1_self_adjudication_decision_memo.md`: internal publication
+  posture and novelty demotion memo.
 - `docs/support_readout_q2_public_mirror_SHA256SUMS.txt`: public mirror hashes.
 - `.github/workflows/verify-frozen-package.yml`: public CI for frozen hashes
   and the Lean kernel.
@@ -152,6 +156,8 @@ The crosswalk in `docs/team1_standard_theorem_crosswalk.md` is the preferred
 one-page route for that demotion check.
 The theorem residue in `docs/team1_finite_center_residue_theorem_note.md` is
 the shortest statement to classify directly.
+The internal publication posture is in
+`docs/team1_self_adjudication_decision_memo.md`.
 
 Public responses can be left on:
 https://github.com/cschubiner/support-readout-q2-obstruction/issues/1
