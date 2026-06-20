@@ -44,6 +44,7 @@ standalone review PDF
 For the one-page OAQEC/JLMS maximality classification request, see
 `docs/team1_oaqec_jlms_maximality_question.md`.
 For the concrete DHR/DR sector-character nonmaximality test, see
+`docs/team1_dhr_dr_sector_faithfulness_question.md`; details are in
 `docs/team1_dhr_dr_sector_character_nonmaximality_note.md` and the standalone
 review PDF `docs/team1_dhr_dr_sector_character_nonmaximality_short_note.pdf`.
 For the concrete crossed-product entropy calibration boundary test, see
@@ -125,8 +126,10 @@ details, add
 short note
 `docs/team1_oaqec_jlms_algebra_relative_nonmaximality_short_note.pdf`.
 For the DHR/DR lane, send
-`docs/team1_dhr_dr_sector_character_nonmaximality_note.md` plus the compact
-short note `docs/team1_dhr_dr_sector_character_nonmaximality_short_note.pdf`.
+`docs/team1_dhr_dr_sector_faithfulness_question.md` first; if the reviewer
+wants details, add `docs/team1_dhr_dr_sector_character_nonmaximality_note.md`
+plus the compact short note
+`docs/team1_dhr_dr_sector_character_nonmaximality_short_note.pdf`.
 For the crossed-product entropy lane, send
 `docs/team1_crossed_product_entropy_calibration_note.md` plus the compact short
 note `docs/team1_crossed_product_entropy_calibration_short_note.pdf`.

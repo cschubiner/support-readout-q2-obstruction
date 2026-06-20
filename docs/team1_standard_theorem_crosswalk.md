@@ -51,6 +51,7 @@ TeX/PDF review version is
 For the one-page OAQEC/JLMS question to send first, see
 `docs/team1_oaqec_jlms_maximality_question.md`.
 For the concrete DHR/DR sector-character nonmaximality test, see
+`docs/team1_dhr_dr_sector_faithfulness_question.md`; details are in
 `docs/team1_dhr_dr_sector_character_nonmaximality_note.md`; the compact TeX/PDF
 review version is
 `docs/team1_dhr_dr_sector_character_nonmaximality_short_note.tex` /
@@ -121,6 +122,7 @@ algebra-relative recovery example.
 
 The DHR/DR row has now been sharpened to a concrete sector-character
 nonmaximality test in
+`docs/team1_dhr_dr_sector_faithfulness_question.md` and
 `docs/team1_dhr_dr_sector_character_nonmaximality_note.md`, with the standalone
 short note `docs/team1_dhr_dr_sector_character_nonmaximality_short_note.pdf`.
 A reviewer can kill it by naming the DHR/DR hypothesis that makes the supplied
